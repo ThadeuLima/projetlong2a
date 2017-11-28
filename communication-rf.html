@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset='utf-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' href='style.css'>
+    <link rel='stylesheet' href='normalize.css'>
+</head>
+
+<body>
+    <header class='hero'>
+        <p class='logo'>Projet 2A Supélec</p>
+        <nav>
+            <p>
+                <a href='index.html'>Home</a>
+            </p>
+            <p>About</p>
+        </nav>
+    </header>
+
+    <main class='content'>
+        <h3 class='h3-interne'>Communication RF</h3>
+            Nous utilisons un émetteur LR433A et un récepteur avec un amplificateur opérationnel
+            LM358 pour la communication radiofréquence en 433MHz. 
+            <p>Les données sont envoyées bit par bit et on peut les
+            afficher sur l'écran ou les passer comme arguments de fonctions. Un exemple d'application est donné ici:
+            <a href='moteur-cc-rf.html'>Contrôle Moteur par RF</a>.</p>
+            
+            <p>Émetteur : Raspberry Pi</p>
+            <p>Récepteur : Arduino</p>
+            
+            Côté Arduino : Librairie RCSwitch qui permet l’échange de données en RF entre la carte et de différentes dispositifs radio-contrôlés, et qui a été adaptée pour l’utilisation avec le kit RF.
+            
+            Côté Raspberry Pi : Librairie WiringPi, une librairie qui permet de contrôler plus facilement 
+            les ports d’entrée/sortie « GPIO » de la carte, en les donnant des numéros simples comme ceux 
+            de la carte Arduino, et aussi les librairies RCSwitch et 433Utils.
+            
+            On envoie une commande via le terminal du Pi (./codesend ‘commande’) où codesend est un programme en
+            langage C++ qui implémente les libraires wiringPi et RCSwitch pour envoyer les données via radio.
+            
+            Les données sont reçues par le récepteur, dont la sortie de données est branchée au port matériel digital numéro 2 de la carte Arduino
+            
+
+</body>
+
+</html>
