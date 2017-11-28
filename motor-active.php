@@ -20,7 +20,7 @@
 
                 if(isset($_GET['speed'])){
                     $speed = $_GET['speed'];
-                    $result = exec("sudo /home/pi/433Utils/RPi_utils/codesend $value");
+                    $result = exec("sudo /home/pi/433Utils/RPi_utils/codesend $speed");
                     echo $result;
                 }
         ?>
