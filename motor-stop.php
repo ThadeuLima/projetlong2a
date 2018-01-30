@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-
 <html>
 
     <head>
@@ -18,13 +16,12 @@
             <a href='index.html'>Home</a>
         </div>
 
-        <main class='content'>
-            <p> Vitesse de 0 a 255:</p>
-            <form method='get' action='motor-active.php'>
-                <input type='text' name='speed'>
-                <input type='submit'> 
-            </form>
+        <?php
+
+            exec("sudo /home/pi/433Utils/RPi_utils/stop.py");
+            exit();
+                
+        ?>
 
     </body>
-
 </html>
