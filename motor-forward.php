@@ -1,4 +1,4 @@
-<html>
+z<html>
 
     <head>
         <meta charset='utf-8' />
@@ -23,7 +23,9 @@
                     $speed_m2 = $speed_m1;
                     $speed_m1 = escapeshellarg($speed_m1);
                     $speed_m2 = escapeshellarg($speed_m2);
-                    $result = exec("sudo /home/pi/433Utils/RPi_utils/codesend $speed_m1 $speed_m2");
+                    $speed_m1 = $speed_m1*78/100+127;
+                    $speed_m2 = $speed_m2*78/100+127;
+                    $result = exec("sudo python /home/pi/commandes-moteur vitesse.py $speed_m1 $speed_m2");
                     echo $result;
                     exit();
                 }
