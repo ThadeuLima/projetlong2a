@@ -18,8 +18,8 @@
 
         <?php
 
-            exec("sudo /home/pi/433Utils/RPi_utils/stop.py");
-            exit();
+           $output =  exec("sudo -u www-data python /home/pi/commandes-moteur/teste.py");
+           echo $output;
                 
         ?>
 

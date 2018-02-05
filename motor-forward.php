@@ -17,17 +17,16 @@
         </div>
 
         <?php
-
-                if(isset($_GET['speed'])){
-                    $speed_m1 = $_GET['speed'];
-                    $speed_m2 = $speed_m1;
-                    $speed_m1 = escapeshellarg($speed_m1);
-                    $speed_m2 = escapeshellarg($speed_m2);
-                    $result = exec("sudo /home/pi/433Utils/RPi_utils/codesend $speed_m1 $speed_m2");
-                    echo $result;
-                    exit();
-                }
-        ?>
+	   
+           $speed_m1 = $_GET['speed'];
+           $speed_m2 = $speed_m1;
+           $speed_m1 = escapeshellarg($speed_m1);
+           $speed_m2 = escapeshellarg($speed_m2);
+           $command = "nohup sudo python /var/www/html/projetlong2a/commandes-moteur/vitesse.py ".$speed_m1." ".$speed_m2;
+           $output = shell_exec($command);
+	   echo "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", $speed_m1, $speed_m2	
+           
+	 ?>
 
     </body>
 </html>
